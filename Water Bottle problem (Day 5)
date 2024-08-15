@@ -1,1 +1,24 @@
-Plzz update me asap
+#include <iostream>
+
+using namespace std;
+
+int num_water_bottles(int num_bottles, int num_exchange) {
+    int total_bottles = num_bottles;
+
+    while (num_bottles >= num_exchange) {
+        int new_bottles = num_bottles / num_exchange;
+        int remaining_bottles = num_bottles % num_exchange;
+
+        total_bottles += new_bottles;
+        num_bottles = new_bottles + remaining_bottles;
+    }
+
+    return total_bottles;
+}
+
+int main() {
+    int num_bottles, num_exchange;
+    cin >> num_bottles >> num_exchange;
+    cout << num_water_bottles(num_bottles, num_exchange) << endl;
+    return 0;
+}
