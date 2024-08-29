@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+
+int SumArr(int arr[], int n){
+    if (n==1){
+        return arr[0];
+    }
+    
+    return arr[0]+SumArr(arr+1, n-1);
+}
+
+double meanArr(int arr[], int n){
+    
+    int sum = SumArr(arr, n);
+    double mean = (double)sum / n;
+    return mean;
+}
+
+int main(){
+    
+    int arr[6]={1,2,5,5,6,7};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    
+    double mean = meanArr(arr, n);
+    
+    cout << "Mean of the given array = " << mean <<endl;
+    
+    return 0;
+}
