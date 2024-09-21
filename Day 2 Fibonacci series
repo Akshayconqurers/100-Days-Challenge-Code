@@ -1,1 +1,27 @@
-Hey THere Update here asap
+#include<iostream>
+using namespace std;
+
+int FibonacciSum(int n) {
+    if (n == 0) {
+        return 0;
+    }
+    if (n == 1) {
+        return 1;
+    }
+
+    // Correct recursive call
+    return FibonacciSum(n - 1) + FibonacciSum(n - 2);
+}
+
+int main() {
+    int n;
+    
+    // Correctly prompt the user to enter the value of n
+    cout << "Enter the value of n: ";
+    cin >> n; // Take the input after prompt
+
+    int ans = FibonacciSum(n); // Call the FibonacciSum function and store result in ans
+    cout << "The Fibonacci Sum is = " << ans << endl; // Display the result
+
+    return 0;
+}
